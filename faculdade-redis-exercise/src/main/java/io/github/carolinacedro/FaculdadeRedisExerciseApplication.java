@@ -12,7 +12,7 @@ public class FaculdadeRedisExerciseApplication {
     @Bean
     public Jedis RedisInstance() {
         System.out.println("Instancia Redis Iniciada");
-        return new Jedis("localhost", 6379);
+        return new Jedis("localhost", 6380);
     }
 
 

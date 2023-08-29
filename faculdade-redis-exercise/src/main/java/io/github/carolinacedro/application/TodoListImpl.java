@@ -91,5 +91,14 @@ public class TodoListImpl implements TodoList {
     public static void main(String[] args) {
         TodoListImpl todoList = new TodoListImpl();
         todoList.menu();
+        todoList.closeRedisInstance();
     }
+
+
+    private Jedis redisInstance = new Jedis("localhost", 6380);
+
+    public void closeRedisInstance() {
+        redisInstance.close();
+    }
+
 }
