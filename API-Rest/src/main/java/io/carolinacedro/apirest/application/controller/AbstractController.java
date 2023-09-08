@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class AbstractController<T> {
+public abstract class AbstractController<T, V> {
     protected abstract AbstractService<T> getService();
 
     @GetMapping
@@ -26,12 +26,19 @@ public abstract class AbstractController<T> {
         return ResponseEntity.ok(data);
     }
 
-
-    @PostMapping
-    public ResponseEntity<T> create(@RequestBody T body) {
+    @PostMapping("/simple-create")
+    public ResponseEntity<T> simpleCreate(@RequestBody T body) {
         return ResponseEntity.ok(getService().create(body));
     }
 
+
+    @PostMapping
+    public ResponseEntity<T> create(@RequestBody V body) {
+        T convertedObject = convertToT(body);
+        return ResponseEntity.ok(getService().create(convertedObject));
+    }
+
+    protected abstract T convertToT(V body);
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {

@@ -12,9 +12,8 @@ public abstract class AbstractServiceImpl<T> implements AbstractService<T> {
 
     protected abstract JpaRepository<T, Long> getRepository();
 
-
     @Override
-    public T create(ResponseDto body) {
+    public T create(T body) {
         return this.getRepository().save(body);
     }
 
@@ -25,7 +24,7 @@ public abstract class AbstractServiceImpl<T> implements AbstractService<T> {
 
     @Override
     public Optional<T> getById(Long id) {
-        return this.getById(id);
+        return this.getRepository().findById(id);
     }
 
     @Override

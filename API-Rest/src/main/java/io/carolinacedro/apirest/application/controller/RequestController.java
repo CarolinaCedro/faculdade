@@ -8,13 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/request")
-public class RequestController extends AbstractController<Request> {
+public class RequestController extends AbstractController<Request, Object> {
 
     private final RequestServiceImpl service;
 
     @Override
     protected AbstractService<Request> getService() {
         return this.service;
+    }
+
+    @Override
+    protected Request convertToT(Object body) {
+        return null;
     }
 
 
