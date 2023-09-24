@@ -5,7 +5,12 @@
 
 
 ### Willian
-* Primeira atividade redis  -> <a href="https://github.com/CarolinaCedro/faculdade/tree/master/faculdade-redis-exercise"> Ver resolução aqui </a> <br>
+
+ * Persistência
+
+ XML -  BINÁRIO  -> <a href="https://github.com/CarolinaCedro/faculdade/tree/master/Persistencia"> Ver resolução aqui </a> <br>
+ Primeira atividade redis  -> <a href="https://github.com/CarolinaCedro/faculdade/tree/master/faculdade-redis-exercise"> Ver resolução aqui </a> <br>
+
 
 
 ### Vinicius
