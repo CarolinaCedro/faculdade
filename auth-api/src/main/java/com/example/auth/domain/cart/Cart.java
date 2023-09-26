@@ -1,5 +1,6 @@
 package com.example.auth.domain.cart;
 
+import com.example.auth.domain.cepView.CepView;
 import com.example.auth.domain.user.User;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -10,15 +11,17 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "cart")
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")

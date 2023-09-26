@@ -1,7 +1,8 @@
 package com.example.auth.domain.pedido;
 
+import com.example.auth.domain.cart.Cart;
+import com.example.auth.domain.cepView.CepView;
 import com.example.auth.domain.user.User;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -11,14 +12,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "pedidos")
+@AllArgsConstructor
+@Data
 public class Pedido {
 
     @Id
@@ -29,11 +33,16 @@ public class Pedido {
     @JoinColumn(name = "user_id")
     private User cliente;
 
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ItemPedido> itens;
 
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
+
+    @OneToOne
+    private Cart cart;
+
+    @OneToOne
+    private CepView enderecoEntrega;
+
 
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
