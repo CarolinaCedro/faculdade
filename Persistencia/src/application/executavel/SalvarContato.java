@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class SalvarContatos {
+public class SalvarContato {
 
     public static void main(String[] args) {
         List<Contato> contatos = new ArrayList<>();
@@ -76,9 +76,9 @@ public class SalvarContatos {
     }
 
 
+    //Salvando em arquivo binario
     private static void salvarContatos(List<Contato> contatos, String nomeArquivo) {
         try {
-            //Salvando em arquivo binario
 
             if (nomeArquivo.endsWith(".bin")) {
                 try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(nomeArquivo))) {
