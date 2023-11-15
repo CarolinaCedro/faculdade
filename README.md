@@ -12,7 +12,7 @@
  Primeira atividade redis  -> <a href="https://github.com/CarolinaCedro/faculdade/tree/master/faculdade-redis-exercise"> Ver resolução aqui </a> <br>
 
  CRUD
- Scholl -> <a href="https://github.com/CarolinaCedro/faculdade/tree/master/Persistencia"> Ver resolução aqui </a> <br>
+ Scholl -> <a href="[https://github.com/CarolinaCedro/faculdade/tree/master/Persistencia](https://github.com/CarolinaCedro/faculdade/tree/master/Scholl)"> Ver resolução aqui </a> <br>
 
 
 
